@@ -12,16 +12,11 @@ public class ListOfList implements Iterator<String> {
 
     public ListOfList(List<List<String>> list) {
         // your code here
-        this.list = list;
-        outerIter = list.iterator();
-        innerIndex = 0;
-        outerIndex = 0;
     }
 
     @Override
     public boolean hasNext() {
         // your code here
-
     }
 
     @Override

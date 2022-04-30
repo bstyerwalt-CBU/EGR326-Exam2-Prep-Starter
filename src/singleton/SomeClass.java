@@ -14,7 +14,15 @@ public class SomeClass {
     private volatile static SomeClass uniqueInstance;
 
     public static synchronized SomeClass getInstance() {
-        // your code here
+        if (uniqueInstance == null) {
+            synchronized (SomeClass.class) {
+                if (uniqueInstance == null) {
+                    return new SomeClass();
+                }
+            }
+        }
+
+        return uniqueInstance;
     }
 
 
